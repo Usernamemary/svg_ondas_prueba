@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+
+  justify-content: center; /* center items horizontally, in this case */
+  align-items: center; /* center items vertically, in this case */
+  position: relative;
+}
+.header__img-circulo {
+  background-color: yellow;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  z-index: -10;
+}
+.header {
+  background: transparent;
+  display: flex;
+  width: 80%;
+
+  justify-content: center; /* center items horizontally, in this case */
+  align-items: center; /* center items vertically, in this case */
+  height: 100vh;
+}
+.header__img,
+.header__text {
+  width: 50%;
+}
+.header__text {
+  text-align: center;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+
+  justify-content: center; /* center items horizontally, in this case */
+  align-items: center; /* center items vertically, in this case */
+}
+
+.header__text .header__button {
+  padding: 1em 1em;
+  background-color: skyblue;
+  border-radius: 15px;
+  border: none;
+  margin-top: 1em;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Unvisited links */
+a:link {
+  color: blue;
+}
+/* Visited links */
+a:visited {
+  color: navy;
+}
+/* Hover state */
+a:hover {
+  font-weight: bold;
+}
+/* Focused state */
+a:focus {
+  font-weight: bold;
+}
+/* Activated state */
+a:active {
+  font-weight: bold;
+}
+.header__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.img__waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -10;
+}
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header__text {
+    padding-top: 1em;
+  }
+  .header__img,
+  .header__text {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center items vertically, in this case */
+    justify-content: center; /* center items horizontally, in this case */
+  }
+}
