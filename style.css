@@ -33,6 +33,22 @@ body {
 .header__text {
   width: 50%;
 }
+.header__img {
+  clip-path: circle(76% at 0% 48%);
+  /*animation*/
+  animation-name: cambiarClipPath;
+  animation-duration: 3s;
+}
+
+@keyframes cambiarClipPath {
+  0% {
+    clip-path: circle(76% at 0% -3%);
+  }
+  100% {
+    clip-path: circle(76% at 0% 48%);
+  }
+}
+
 .header__text {
   text-align: center;
   display: flex;
@@ -42,25 +58,61 @@ body {
   align-items: center; /* center items vertically, in this case */
 }
 
-.header__text .header__button {
-  padding: 1em 1em;
+.header__button {
+  border-radius: 0% 0% 100% 0%;
   background-color: skyblue;
-  border-radius: 15px;
   border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 1em 1em;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
   margin-top: 1em;
 }
 
+.header__button:hover,
+.header__button:focus {
+  border-radius: 0% 0% 0% 0%;
+}
+
+.header__button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.header__button span:after {
+  content: '〜';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.header__button:hover span {
+  padding-right: 25px;
+}
+
+.header__button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 a {
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
 }
 /* Unvisited links */
 a:link {
-  color: blue;
+  color: #ffffff;
 }
 /* Visited links */
 a:visited {
-  color: navy;
+  color: #ffffff;
 }
 /* Hover state */
 a:hover {
